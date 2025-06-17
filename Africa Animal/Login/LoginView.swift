@@ -15,15 +15,15 @@ struct LoginView: View {
 
             // Centered Welcome Text
             Text("Welcome")
-                .font(.largeTitle.bold())
-                .foregroundColor(.orange)
+                .font(.system(size: 60, weight: .bold))
+                .foregroundColor(.accent)
                 .frame(maxWidth: .infinity, alignment: .center)
 
             VStack(alignment: .leading, spacing: 12) {
                 // Login Label
                 Text("Login")
-                    .font(.title2.bold())
-                    .foregroundColor(.white)
+                    .font(.system(size: 40,weight: .bold))
+                    .foregroundColor(Color.mainWhite)
 
                 // Email Field
                 CustomTextField(placeholder: "Email", text: $presenter.email)
@@ -38,7 +38,7 @@ struct LoginView: View {
                         presenter.forgotPasswordTapped()
                     }
                     .foregroundColor(.white)
-                    .font(.footnote)
+                    .font(.system(size: 20,weight: .regular))
                 }
             }
 
@@ -47,9 +47,10 @@ struct LoginView: View {
                 presenter.loginTapped()
             }) {
                 Text("Login")
+                    .font(.system(size: 20,weight: .bold))
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.orange)
+                    .background(.accent)
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
@@ -59,10 +60,11 @@ struct LoginView: View {
                 presenter.signUpTapped()
             }) {
                 Text("Sign up")
+                    .font(.system(size: 20,weight: .bold))
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .foregroundColor(.orange)
-                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.orange))
+                    .foregroundColor(.accent)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(.accent))
             }
 
             Spacer()
