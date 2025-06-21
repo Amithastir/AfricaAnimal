@@ -25,8 +25,7 @@ struct Africa_AnimalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeModuleBuilder.build()
-          //  LoginView(presenter: LoginPresenter())
+            RootView()
         }
         .modelContainer(sharedModelContainer)
     }

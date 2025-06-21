@@ -28,9 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		834A33212DFD97F100A19645 /* Africa Animal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Africa Animal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		834A33302DFD97F300A19645 /* Africa AnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Africa AnimalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		834A333A2DFD97F300A19645 /* Africa AnimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Africa AnimalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		834A33212DFD97F100A19645 /* Africa Animal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Africa Animal.app"; path = "/Users/amitsharma/Documents/AfricaAnimal/build/Debug-iphoneos/Africa Animal.app"; sourceTree = "<absolute>"; };
+		834A33302DFD97F300A19645 /* Africa AnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Africa AnimalTests.xctest"; path = "/Users/amitsharma/Documents/AfricaAnimal/build/Debug-iphoneos/Africa Animal.app/PlugIns/Africa AnimalTests.xctest"; sourceTree = "<absolute>"; };
+		834A333A2DFD97F300A19645 /* Africa AnimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Africa AnimalUITests.xctest"; path = "/Users/amitsharma/Documents/AfricaAnimal/build/Debug-iphoneos/Africa AnimalUITests-Runner.app/PlugIns/Africa AnimalUITests.xctest"; sourceTree = "<absolute>"; };
 		834A336B2DFEF86700A19645 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,18 +84,7 @@
 				834A33232DFD97F100A19645 /* Africa Animal */,
 				834A33332DFD97F300A19645 /* Africa AnimalTests */,
 				834A333D2DFD97F300A19645 /* Africa AnimalUITests */,
-				834A33222DFD97F100A19645 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		834A33222DFD97F100A19645 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				834A33212DFD97F100A19645 /* Africa Animal.app */,
-				834A33302DFD97F300A19645 /* Africa AnimalTests.xctest */,
-				834A333A2DFD97F300A19645 /* Africa AnimalUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +191,7 @@
 			mainGroup = 834A33182DFD97F100A19645;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 834A33222DFD97F100A19645 /* Products */;
+			productRefGroup = 834A33182DFD97F100A19645;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

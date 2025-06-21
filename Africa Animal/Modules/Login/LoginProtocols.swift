@@ -15,6 +15,7 @@ protocol LoginInteractorOutputProtocol {
 }
 
 protocol LoginRouterProtocol {
+    func navigateToHome()
     func navigateToForgotPassword()
     func navigateToSignUp()
 }

@@ -7,22 +7,23 @@
 import Combine
 
 class LoginPresenter: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
+    @Published var email = "test@example.com"
+    @Published var password = "123456"
 
     var interactor: LoginInteractorProtocol?
     var router: LoginRouterProtocol?
 
     func loginTapped() {
-        interactor?.login(email: email, password: password)
+        // Do validation here...
+        router?.navigateToHome()
     }
 
     func forgotPasswordTapped() {
-        router?.navigateToForgotPassword()
+        // Not implemented
     }
 
     func signUpTapped() {
-        router?.navigateToSignUp()
+        // Not implemented
     }
 }
 

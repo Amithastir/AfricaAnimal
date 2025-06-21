@@ -4,13 +4,23 @@
 //
 //  Created by Amit Sharma on 6/17/25.
 //
-
+import SwiftUI
 class LoginRouter: LoginRouterProtocol {
-    func navigateToForgotPassword() {
-        // Navigate to Forgot Password screen
-    }
+    @Binding var isLoggedIn: Bool
 
-    func navigateToSignUp() {
-        // Navigate to Sign Up screen
-    }
+        init(isLoggedIn: Binding<Bool>) {
+            self._isLoggedIn = isLoggedIn
+        }
+
+        func navigateToHome() {
+            isLoggedIn = true
+        }
+        func navigateToForgotPassword() {
+            // Navigate to Forgot Password screen
+        }
+    
+        func navigateToSignUp() {
+            // Navigate to Sign Up screen
+        }
 }
+
