@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeInteractorProtocol {
     func fetchAnimals() -> [Animal]
+    func fetchCovers() -> [Cover]
 }
 
 class HomeInteractor: HomeInteractorProtocol {
@@ -19,5 +20,13 @@ class HomeInteractor: HomeInteractorProtocol {
             return []
         }
         return animals
+    }
+    func fetchCovers() -> [Cover] {
+        guard let url = Bundle.main.url(forResource: "covers", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let covers = try? JSONDecoder().decode([Cover].self, from: data) else {
+            return []
+        }
+        return covers
     }
 }

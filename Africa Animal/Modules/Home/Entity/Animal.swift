@@ -17,3 +17,9 @@ struct Animal: Identifiable, Decodable {
     let gallery: [String]
     let fact: [String]
 }
+
+struct Cover: Identifiable, Decodable {
+    let id: Int
+    let name: String
+}
+

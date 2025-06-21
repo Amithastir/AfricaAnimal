@@ -12,18 +12,24 @@ class HomePresenter: ObservableObject {
     private let router: HomeRouterProtocol
 
     @Published var animals: [Animal] = []
+    @Published var carouselImages: [String] = []
     @Published var selectedIndex: Int = 0
-    let carouselImages = ["cover-lion", "cover-gorilla", "cover-zebra","cover-giraffe","cover-elephant","cover-cheetah","cover-buffalo"]
 
     init(interactor: HomeInteractorProtocol, router: HomeRouterProtocol) {
         self.interactor = interactor
         self.router = router
         loadAnimals()
+        loadCovers()
+
     }
 
     func loadAnimals() {
         animals = interactor.fetchAnimals()
     }
+    
+    func loadCovers() {
+          carouselImages = interactor.fetchCovers().map { $0.name }
+      }
 
     func didSelectAnimal(_ animal: Animal) {
         router.navigateToAnimalDetail(animal)
