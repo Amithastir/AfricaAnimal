@@ -51,11 +51,18 @@ struct WatchView: View {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.gray)
                 }
+                .onTapGesture{
+                    presenter.didSelectVideo(video)
+                }
+                .listRowBackground(Color.black)
                 .padding(.vertical, 8)
                 .listRowBackground(Color.black)
             }
             .listStyle(.plain)
             .background(Color.black)
+            .fullScreenCover(item: $presenter.selectedVideo) { selected in
+                VideoPlayerView(videoName: selected.videoId)
+            }
         }
         .background(Color.black.edgesIgnoringSafeArea(.all))
     }

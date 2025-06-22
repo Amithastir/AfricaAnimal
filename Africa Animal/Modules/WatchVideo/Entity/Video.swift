@@ -10,5 +10,6 @@ struct Video: Identifiable, Decodable {
     let id: String
     let name: String
     let headline: String
+    let videoId:String
     var thumbnailImage: String { id }
 }

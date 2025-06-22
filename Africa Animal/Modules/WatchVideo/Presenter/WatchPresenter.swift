@@ -10,6 +10,7 @@ class WatchPresenter: ObservableObject {
     private let interactor: WatchInteractorProtocol
     private let router: WatchRouterProtocol
 
+    @Published var selectedVideo: Video?
     @Published var videos: [Video] = []
 
     init(interactor: WatchInteractorProtocol, router: WatchRouterProtocol) {
@@ -23,6 +24,6 @@ class WatchPresenter: ObservableObject {
     }
 
     func didSelectVideo(_ video: Video) {
-        router.navigateToVideoDetail(video)
+        selectedVideo = video
     }
 }
