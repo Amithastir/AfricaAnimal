@@ -39,7 +39,7 @@ struct MainTabView: View {
                 }
                 .tag(2)
 
-            Text("Settings") // need to replace with setting module.
+            SettingsModuleBuilder.build()
                 .tabItem {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
