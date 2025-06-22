@@ -5,6 +5,13 @@ struct HomeView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            
+            Text("Africa")
+                .font(.title2.bold())
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.top, 16)
+            
             // MARK: - Carousel
             TabView(selection: $presenter.selectedIndex) {
                 ForEach(0..<presenter.carouselImages.count, id: \.self) { index in

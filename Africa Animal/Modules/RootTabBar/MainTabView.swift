@@ -25,7 +25,7 @@ struct MainTabView: View {
                 }
                 .tag(0)
 
-            Text("Watch") // need to replace with video module.
+            WatchModuleBuilder.build()
                 .tabItem {
                     Image(systemName: "play.rectangle.fill")
                     Text("Watch")

@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		834A33212DFD97F100A19645 /* Africa Animal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Africa Animal.app"; path = "/Users/amitsharma/Documents/AfricaAnimal/build/Debug-iphoneos/Africa Animal.app"; sourceTree = "<absolute>"; };
-		834A33302DFD97F300A19645 /* Africa AnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Africa AnimalTests.xctest"; path = "/Users/amitsharma/Documents/AfricaAnimal/build/Debug-iphoneos/Africa Animal.app/PlugIns/Africa AnimalTests.xctest"; sourceTree = "<absolute>"; };
-		834A333A2DFD97F300A19645 /* Africa AnimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Africa AnimalUITests.xctest"; path = "/Users/amitsharma/Documents/AfricaAnimal/build/Debug-iphoneos/Africa AnimalUITests-Runner.app/PlugIns/Africa AnimalUITests.xctest"; sourceTree = "<absolute>"; };
 		834A336B2DFEF86700A19645 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		839562FF2E07D3BC00C2C5E2 /* Africa Animal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Africa Animal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		839563002E07D3BC00C2C5E2 /* Africa AnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Africa AnimalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		839563012E07D3BC00C2C5E2 /* Africa AnimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Africa AnimalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,6 +84,9 @@
 				834A33232DFD97F100A19645 /* Africa Animal */,
 				834A33332DFD97F300A19645 /* Africa AnimalTests */,
 				834A333D2DFD97F300A19645 /* Africa AnimalUITests */,
+				839562FF2E07D3BC00C2C5E2 /* Africa Animal.app */,
+				839563002E07D3BC00C2C5E2 /* Africa AnimalTests.xctest */,
+				839563012E07D3BC00C2C5E2 /* Africa AnimalUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +112,7 @@
 			packageProductDependencies = (
 			);
 			productName = "Africa Animal";
-			productReference = 834A33212DFD97F100A19645 /* Africa Animal.app */;
+			productReference = 839562FF2E07D3BC00C2C5E2 /* Africa Animal.app */;
 			productType = "com.apple.product-type.application";
 		};
 		834A332F2DFD97F300A19645 /* Africa AnimalTests */ = {
@@ -132,7 +135,7 @@
 			packageProductDependencies = (
 			);
 			productName = "Africa AnimalTests";
-			productReference = 834A33302DFD97F300A19645 /* Africa AnimalTests.xctest */;
+			productReference = 839563002E07D3BC00C2C5E2 /* Africa AnimalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		834A33392DFD97F300A19645 /* Africa AnimalUITests */ = {
@@ -155,7 +158,7 @@
 			packageProductDependencies = (
 			);
 			productName = "Africa AnimalUITests";
-			productReference = 834A333A2DFD97F300A19645 /* Africa AnimalUITests.xctest */;
+			productReference = 839563012E07D3BC00C2C5E2 /* Africa AnimalUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
