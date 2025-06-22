@@ -11,16 +11,22 @@ struct SettingsView:View {
     @ObservedObject var presenter: SettingsPresenter
 
     var body: some View{
-        VStack(alignment: .leading, spacing: 0) {
-            // MARK: - Title
-            Text("Settings")
-                .font(.title2.bold())
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top, 16)
-
-            .background(Color.black)
+        VStack(alignment: .leading, spacing: 0){
+            Text("Setting").font(.title2.bold())
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity,alignment: .center)
+            .padding(.top,16)
+            Divider()
+            Spacer()
         }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .background(Color.black)
     }
 }
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsModuleBuilder.build()
+    }
+}
+
+

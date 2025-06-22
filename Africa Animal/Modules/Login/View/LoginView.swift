@@ -73,3 +73,8 @@ struct LoginView: View {
         .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginModuleBuilder.build(isLoggedIn: .constant(false))
+    }
+}

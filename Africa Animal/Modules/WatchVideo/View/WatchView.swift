@@ -60,3 +60,9 @@ struct WatchView: View {
         .background(Color.black.edgesIgnoringSafeArea(.all))
     }
 }
+
+struct WatchView_Previews: PreviewProvider {
+    static var previews: some View {
+        WatchModuleBuilder.build()
+    }
+}
