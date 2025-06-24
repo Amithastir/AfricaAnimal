@@ -16,4 +16,8 @@ class SettingsPresenter: ObservableObject {
         self.interactor = interactor
         self.router = router
     }
+
+    func logout() {
+        print("Logout tapped")
+    }
 }
