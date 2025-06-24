@@ -16,6 +16,9 @@ class SettingsPresenter: ObservableObject {
         self.interactor = interactor
         self.router = router
     }
+    func clearData() {
+        print("Clear data tapped")
+    }
 
     func logout() {
         print("Logout tapped")
