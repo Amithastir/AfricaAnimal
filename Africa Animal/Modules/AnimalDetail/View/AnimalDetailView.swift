@@ -5,21 +5,26 @@
 //  Created by Amit Sharma on 6/28/25.
 //
 import SwiftUI
-import SwiftUI
+import SwiftData
 
 struct AnimalDetailView: View {
     @ObservedObject var presenter: AnimalDetailPresenter
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
+    @Query private var favorites: [FavoriteAnimal]
+    @State private var isFavoriteState = false
+    @State private var isProcessingToggle = false
 
     var body: some View {
         NavigationView {
             content
                 .onAppear {
+                    updateFavoriteState()
                     setWhiteNavBarTitle()
                 }
         }
     }
-
+    
     private var content: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -76,17 +81,15 @@ struct AnimalDetailView: View {
         }
         .background(Color.black.ignoresSafeArea())
         .navigationBarTitle(presenter.animal.name, displayMode: .inline)
-        .navigationBarItems(leading: Button(action: {
-            dismiss()
-        }) {
-            Image(systemName: "xmark")
-                .foregroundColor(.accentColor)
-        },trailing: Button(action: {
-            // logic for add to favorite and unfavorite.
-        }) {
-            Image(systemName: "heart")
-                .foregroundColor(.accentColor)
-        })
+        .navigationBarItems(
+            leading: Button(action: { dismiss() }) {
+                Image(systemName: "xmark").foregroundColor(.white)
+            },
+            trailing: Button(action: toggleFavorite) {
+                Image(systemName: isFavoriteState ? "heart.fill" : "heart")
+                    .foregroundColor(.accentColor)
+            }
+        )
     }
 
     private func setWhiteNavBarTitle() {
@@ -98,6 +101,35 @@ struct AnimalDetailView: View {
 
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
+    private func toggleFavorite() {
+        guard !isProcessingToggle else { return }
+        isProcessingToggle = true
+        if let existing = favorites.first(where: { $0.id == presenter.animal.id }) {
+            modelContext.delete(existing)
+            print("Delete \(existing.name) to favorites")
+
+        } else {
+            let new = FavoriteAnimal(
+                id: presenter.animal.id,
+                name: presenter.animal.name,
+                headline: presenter.animal.headline,
+                image: presenter.animal.image
+            )
+            modelContext.insert(new)
+            print("Added \(new.name) to favorites")
+        }
+
+        // Wait for SwiftData to commit
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            updateFavoriteState()
+            isProcessingToggle = false
+        }
+    }
+    
+    private func updateFavoriteState() {
+        isFavoriteState = favorites.contains { $0.id == presenter.animal.id }
     }
 }
 

@@ -32,7 +32,7 @@ struct MainTabView: View {
                 }
                 .tag(1)
 
-            Text("Fav") // need to replace with favorites module.
+            FavoriteModuleBuilder.build()
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Fav")
