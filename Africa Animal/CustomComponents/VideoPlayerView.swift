@@ -33,10 +33,10 @@ struct VideoPlayerView: View {
                 dismiss()
             }) {
                 HStack(spacing: 4) {
-                    Image(systemName: "chevron.left")
-                    Text("Back")
+                    Image(systemName: "xmark")
+                        .foregroundColor(.accent)
                 }
-                .foregroundColor(.orange)
+                .foregroundColor(.accent)
             })
         }
         .onAppear {

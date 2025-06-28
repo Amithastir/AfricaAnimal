@@ -41,6 +41,9 @@ struct HomeView: View {
         .background(Color.black)
         .navigationTitle("Africa")
         .navigationBarTitleDisplayMode(.inline)
+        .fullScreenCover(item: $presenter.selectedAnimal) { animal in
+            AnimalDetailModuleBuilder.build(with: animal)
+        }
     }
 }
 

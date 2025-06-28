@@ -10,6 +10,7 @@ import SwiftUI
 class HomePresenter: ObservableObject {
     private let interactor: HomeInteractorProtocol
     private let router: HomeRouterProtocol
+    @Published var selectedAnimal: Animal?
 
     @Published var animals: [Animal] = []
     @Published var carouselImages: [String] = []
@@ -32,6 +33,7 @@ class HomePresenter: ObservableObject {
       }
 
     func didSelectAnimal(_ animal: Animal) {
-        router.navigateToAnimalDetail(animal)
+           selectedAnimal = animal
+           router.navigateToAnimalDetail(animal)
     }
 }
