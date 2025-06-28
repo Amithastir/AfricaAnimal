@@ -1,7 +1,6 @@
 # This workflow will build a Swift project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
-
-name: Swift
+name: iOS Build with Xcode
 
 on:
   push:
@@ -11,12 +10,22 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+    - name: Checkout project
+      uses: actions/checkout@v4
+
+    - name: Select Xcode version (fallback to latest)
+      run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+    - name: Build App
+      run: |
+        xcodebuild -scheme AfricaAnimal \
+                   -destination 'platform=iOS Simulator,name=iPhone 15' \
+                   clean build
+
+    - name: Run Unit Tests
+      run: |
+        xcodebuild test -scheme AfricaAnimal \
+                        -destination 'platform=iOS Simulator,name=iPhone 15'
